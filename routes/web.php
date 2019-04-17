@@ -10,11 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use Illuminate\Routing\UrlGenerator::forceSchema;
-
-if (env('APP_ENV') === 'production') {
-    URL::forceSchema('https');
-}
 
 Route::get('/', function () {
   return view('auth.login');
