@@ -1,5 +1,5 @@
 <?php
-  $url = parse_url(getenv("mysql://bcacf85876b72c:182f1624@us-cdbr-iron-east-02.cleardb.net/heroku_fbffd134db23686?reconnect=true"));
+  $url = parse_url(getenv("CLEARDB_MAUVE_URL"));
 
   $host = $url["host"];
   $username = $url["user"];
@@ -56,6 +56,8 @@ return [
         'collation' => 'utf8_unicode_ci',
         'prefix'    => '',
         ],
+
+        //***For development mode only ********//
         // 'mysql' => [
         //     'driver' => 'mysql',
         //     'host' => env('DB_HOST', '127.0.0.1'),
