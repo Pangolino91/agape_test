@@ -12,7 +12,26 @@ return [
     |
     */
 
-    'about' => 'About'
+    'product_news' => 'Product News',
+    'about' => 'About',
+    'flatxl_system' => 'FlatXL system',
+    'evolution_system' => 'Evolution System',
+    'agape_design_service' => 'Agape Design Service',
+    'designer' => 'Designer',
+    'references' => 'References',
+    'download' => 'Download',
+    'mangiarotti_collection' => 'Mangiarotti Collection',
+    'services' => 'Services',
+    'news' => 'News',
+    'news_letter' => 'News Letter',
+    'profile' => 'Profile',
+    'history' => 'History',
+    'sustainability' => 'Sustainability',
+    'where_we_are' => 'Where We Are',
+    'home' => 'Home',
+    'bathroom' => 'Bathroom',
+    'contract' => 'Contract',
+    'company' => 'Company',
 ];
 
 ?>

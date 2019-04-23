@@ -45,10 +45,10 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="langdropdown">
                 <li>
-                  <a href="{{ url('locale/en') }}" class="dropdown-item"><img src="img/core-img/eng.png" alt=""> English</a>
+                  <a href="{{ url('locale/en') }}" class="dropdown-item"><img src="{{asset('img/core-img/eng.png')}}" alt=""> English</a>
                 </li>
                 <li>
-                  <a href="{{ url('locale/it') }}" class="dropdown-item"><img src="img/core-img/itally.jpg" alt=""> Italiano</a>
+                  <a href="{{ url('locale/it') }}" class="dropdown-item"><img src="{{asset('img/core-img/itally.jpg')}}" alt=""> Italiano</a>
                 </li>
               </ul>
             </li>
@@ -67,7 +67,7 @@
         <nav class="classy-navbar justify-content-between" id="hamiNav">
 
             <!-- Logo -->
-          <a class="nav-brand" href="/site"><img src="{{asset('img/core-img/logo_trans.png')}}" alt=""></a>
+          <a class="nav-brand" href="site"><img src="{{asset('img/core-img/logo_trans.png')}}" alt=""></a>
 
           <!-- Navbar Toggler -->
           <div class="classy-navbar-toggler">
@@ -83,45 +83,53 @@
             <!-- Nav Start -->
             <div class="classynav">
               <ul id="nav">
-                <li><a href="#">Bathroom</a>
+                <li><a href="#">{{ __('nav.bathroom') }}</a>
                   <ul class="dropdown">
-                    <li><a href="javascript:void(0)">- Novità Prodotto</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.product_news') }}</a></li>
+                    <?php $product_categories = Helper::retrieve_product_categories() ?>
+                    @if(count($product_categories) > 0) 
+                      @foreach($product_categories as $product_category)
+                        @if($product_category->name != "Sistema Flat XL" && $product_category->name != "Sistema Flat XL")
+                          <li><a href="/site/product_category/{{$product_category->product_category_id}}">- {{$product_category->name}}</a></li>
+                        @endif
+                      @endforeach
+                    @endif
                     <li><a href="javascript:void(0)">- Sistema FlatXL</a></li>
                     <li><a href="javascript:void(0)">- Sistema Evoluzione</a></li>
-                    <li><a href="javascript:void(0)">- Agape Design Service</a></li>
-                    <li><a href="javascript:void(0)">- Designer</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.agape_design_service') }}</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.designer') }}</a></li>
                     <!-- <li><a href="./404.html">- 404</a></li> -->
-                    <li><a href="javascript:void(0)">- Referenze</a></li>
-                    <li><a href="javascript:void(0)">- Download</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.references') }}</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.download') }}</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Casa</a>
+                <li><a href="#">{{ __('nav.home') }}</a>
                   <ul class="dropdown">
-                    <li><a href="javascript:void(0)">- Mangiarotti Collection</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.mangiarotti_collection') }}</a></li>
                     <li><a href="/about">- {{ __('nav.about') }}</a></li>
-                    <li><a href="javascript:void(0)">- Designer</a></li>
-                    <li><a href="javascript:void(0)">- Referenze</a></li>
-                    <li><a href="javascript:void(0)">- Download</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.designer') }}</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.references') }}</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.download') }}</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Contract</a>
+                <li><a href="#">{{ __('nav.contract') }}</a>
                   <ul class="dropdown">
-                    <li><a href="javascript:void(0)">- Servizi</a></li>
-                    <li><a href="javascript:void(0)">- Referenze</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.services') }}</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.references') }}</a></li>
                   </ul>
                 </li>
-                <li><a href="#">News</a>
+                <li><a href="#">{{ __('nav.news') }}</a>
                   <ul class="dropdown">
-                    <li><a href="javascript:void(0)">- Notizie</a></li>
-                    <li><a href="javascript:void(0)">- Newsletter</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.news') }}</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.news_letter') }}</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Azienda</a>
+                <li><a href="#">{{ __('nav.company') }}</a>
                   <ul class="dropdown">
-                    <li><a href="javascript:void(0)">- Profilo</a></li>
-                    <li><a href="javascript:void(0)">- Storia</a></li>
-                    <li><a href="javascript:void(0)">- Sostenibilità</a></li>
-                    <li><a href="javascript:void(0)">- Dove siamo</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.profile') }}</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.history') }}</a></li>
+                    <li><a href="javascript:void(0)">- {{ __ ('nav.sustainability') }}</a></li>
+                    <li><a href="javascript:void(0)">- {{ __('nav.where_we_are') }}</a></li>
                   </ul>
                 </li>
               </ul>
